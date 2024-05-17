@@ -1,0 +1,55 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 25
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| odbo               |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use odbo;
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_odbo |
++----------------+
+| members        |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> desc members;
++------------+-------------+------+-----+-------------------+-------------------+
+| Field      | Type        | Null | Key | Default           | Extra             |
++------------+-------------+------+-----+-------------------+-------------------+
+| id         | varchar(20) | NO   | PRI | NULL              |                   |
+| passwd     | varchar(20) | YES  |     | NULL              |                   |
+| email      | varchar(50) | YES  |     | NULL              |                   |
+| signuptime | timestamp   | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++------------+-------------+------+-----+-------------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from members;
++---------+--------+--------------+---------------------+
+| id      | passwd | email        | signuptime          |
++---------+--------+--------------+---------------------+
+| seoyoon | 1234   | yy@naver.com | 2024-05-17 11:25:20 |
++---------+--------+--------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql>
